@@ -24,7 +24,7 @@ export function getResizerUrl(imgSrc: string, params: CloudResizerProps): string
   return url;
 }
 
-export const CloudResizer: React.FC = (props: CloudResizerProps) => { 
+export const CloudResizer: React.FC<CloudResizerProps> = (props: CloudResizerProps) => { 
   var imgElement = React.Children.only(props.children) as any;
   return React.cloneElement(imgElement, {
     src: getResizerUrl(imgElement.props.src, props)
